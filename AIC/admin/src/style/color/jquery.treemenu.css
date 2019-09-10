@@ -1,0 +1,51 @@
+/* For treemenu.js */
+
+.treemenu li { list-style: none; }
+
+.treemenu .toggler {
+    cursor: pointer;
+}
+
+.treemenu .toggler:before {
+    display: inline-block;
+    margin-right: 2pt;
+}
+
+li.tree-empty > .toggler { color: #aaa; }
+li.tree-empty > .toggler:before { content: "\2212"; }
+li.tree-closed > .toggler:before { content: "+"; }
+li.tree-opened > .toggler:before { content: "\2212"; }
+
+    .tree {  color:#000;width:800px;margin:0;}
+.tree li,
+.tree li > a,
+.tree li > span {
+    padding: 4pt;
+    border-radius: 4px;
+}
+
+.tree li a {
+   color:#000;;
+    text-decoration: none;
+    line-height: 20pt;
+    border-radius: 4px;
+}
+
+.tree li a:hover {
+    background-color: #34BC9D;
+    color: #000;
+}
+
+.active {
+    background-color: #cccaca;
+    color: #000;
+}
+
+.active a {
+    color: #000;
+}
+
+.tree li a.active:hover {
+    background-color: #34BC9D;
+}
+

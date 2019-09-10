@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AIC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="/admin/start/assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/admin/start/assets/css/amazeui.datatables.min.css" />
+    <link rel="stylesheet" href="/admin/start/assets/css/app.css">
+    <link rel="stylesheet" href="/admin/start/assets/css/slide-unlock.css">
+    <script src="/admin/start/assets/js/jquery.min.js"></script>
+</head>
+<body data-type="login">
+    <script src="/admin/start/assets/js/theme.js"></script>
+    <div class="am-g tpl-g">
+        <div class="tpl-login">
+            <div class="tpl-login-content">
+                <div class="tpl-login-title">注册用户</div>
+                <span class="tpl-login-content-info">
+                    创建一个新的用户
+                </span>
+                <form class="am-form tpl-form-line-form">
+                    <div class="am-form-group">
+                        <input type="text" class="tpl-form-input" id="tj_email" name="tj_email" value="">
+                        <label class="input--label--akira">推荐人邮箱</label>
+                    </div>
+                    <div class="am-form-group">
+                        <input type="text" class="tpl-form-input" id="email" name="email">
+                        <label class="input--label--akira">您的邮箱</label>
+                    </div>
+                    <!--<div class="am-form-group">
+                        <div id="slider">
+                            <div id="slider_bg"></div>
+                            <span id="label">>></span>
+                            <span id="labelTip">拖动滑块获取验证码</span>
+                        </div>
+                    </div>-->
+                    <!--<div class="am-form-group">
+                        <input type="text" class="tpl-form-input" id="vcode" name="vcode">
+                        <label class="input--label--akira">请输入邮箱验证码</label>
+                    </div>-->
+
+                    <div class="am-form-group">
+                        <input type="password" class="tpl-form-input" id="password" name="password">
+                        <label class="input--label--akira">请输入登录密码</label>
+                    </div>
+
+                    <div class="am-form-group">
+                        <input type="password" class="tpl-form-input" id="towpassword" name="towpassword">
+                        <label class="input--label--akira">请输入二级密码</label>
+                    </div>
+
+
+                    <!--<div class="am-form-group tpl-login-remember-me">
+                                            <input id="read-me" type="checkbox">
+                                            <label for="read-me" style="top:0;">
+                                            已阅读并同意 <a href="javascript:;">《用户协议》</a>
+                    <a id="eead53e0219d4f418639acae1b7cf71e" href="http://www.iis7.com" id="eead53e0219d4f418639acae1b7cf71e" target="_blank" style="display:inline-block;background-color:;color:#fff;padding:2px 5px;font-family:arial;font-size:12px;font-weight:bold;" >iis7站长之家</a>
+                                            </label>
+                                        </div>-->
+                    <div class="am-form-group">
+                        <button type="button" id="btnn" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/admin/start/assets/js/amazeui.min.js"></script>
+    <script src="/admin/start/assets/js/app.js"></script>
+    <script src="/admin/start/assets/js/jquery.slideunlock.js"></script>
+    <script src="/admin/start/assets/js/classie.js"></script>
+    <script>
+
+        (function () {
+            if (!String.prototype.trim) {
+                (function () {
+                    // Make sure we trim BOM and NBSP
+                    var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                    String.prototype.trim = function () {
+                        return this.replace(rtrim, '');
+                    };
+                })();
+            }
+
+            [].slice.call(document.querySelectorAll('input.tpl-form-input')).forEach(function (inputEl) {
+                // in case the input is already filled..
+                if (inputEl.value.trim() !== '') {
+                    classie.add(inputEl.parentNode, 'input--filled');
+                }
+                // events:
+                inputEl.addEventListener('focus', onInputFocus);
+                inputEl.addEventListener('blur', onInputBlur);
+            });
+
+            function onInputFocus(ev) {
+                classie.add(ev.target.parentNode, 'input--filled');
+            }
+
+            function onInputBlur(ev) {
+                if (ev.target.value.trim() === '') {
+                    classie.remove(ev.target.parentNode, 'input--filled');
+                }
+            }
+        })();
+    </script>
+    <script>
+        $('#btnn').click(function () {
+            console.log($("#email").val())
+            if (!$("#tj_email").val()) {
+                //layer.msg('请输入推荐人邮箱!');
+                alert("请输入推荐人邮箱!")
+                return false;
+            }
+            if (!$("#email").val()) {
+                alert('请输入您的邮箱!');
+                return false;
+            }
+            //if (!$("#vcode").val()) {
+            //    layer.msg('请输入邮箱验证码!');
+            //    return false;
+            //}
+            if (!$("#password").val()) {
+                alert('请输入登录密码!');
+                return false;
+            }
+            if (!$("#towpassword").val()) {
+                alert('请输入二级密码!');
+                return false;
+            }
+            if ($("#password").val() == $("#towpassword").val()) {
+                layer.msg('登录密码和二级密码不能相同!');
+                return false;
+            }
+            //if(!$('#read-me').is(':checked')) {
+            //    layer.msg('阅读以上规则,并同意！');
+            //    return false;
+            //}
+            $("#btnn").attr("disabled", "true");
+            $(function () {
+                var params = {
+                    tj_email: $("#tj_email").val(),
+                    email: $("#email").val(),
+                    password: $("#password").val(),
+                    towpassword: $("#towpassword").val(),
+                };
+                $.ajax({
+                    url:"/control/indexcontrol.ashx?functiontype=registered",
+                    data: params,
+                    cache: false,
+                    type: "post",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                        //layer.msg(data.message);
+                        if (data.code == 0) {
+                            alert(data.msg)
+                            window.setTimeout("window.location='/admin/src/views/login.html'", 1000);
+                            return true;
+                        } else {
+                            alert(data.msg)
+                        }
+                    }
+                });
+            });
+        })
+        //$(function () {
+        //    var slider = new SliderUnlock("#slider", {
+        //        successLabelTip: "验证成功"
+        //    }, function () {
+        //        $.ajax({
+        //            type: 'post',
+        //            url: '/control/indexcontrol.ashx?functiontype=fsyzm',
+        //            data: { email: $("#email").val(), tj_email: $("#tj_email").val() },
+        //            cache: false,
+        //            dataType: 'json',
+        //            success: function (data) {
+        //                if (data.code == '200') {
+        //                    $('#labelTip').attr('data', data.data);
+        //                    layer.msg('发送邮件验证码成功！');
+        //                } else {
+        //                    layer.msg(data.data, function () {
+        //                        location.reload();
+        //                    });
+        //                }
+        //            },
+        //        });
+        //    });
+        //    slider.init();
+        //})
+
+
+
+
+    </script>
+</body>
+</html>

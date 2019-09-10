@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../../start/layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo" id="geren" style="width: 305px;">AIC 个人中心</div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a id="en" href="javascript:;">
+                        <!--<img src="http://t.cn/RCzsdCq" class="layui-nav-img">-->
+                        未登录
+
+                    </a>
+                    <!--<dl class="layui-nav-child">
+                        <dd><a href="">首页</a></dd>
+                        <dd><a href="">资料完善</a></dd>
+                        <dd><a href="">我的团队</a></dd>
+                        <dd><a href="">转账</a></dd>
+                        <dd><a href="">转账记录</a></dd>
+                        <dd><a href="">邀请</a></dd>
+                    </dl>-->
+                </li>
+                <li class="layui-nav-item"><a href="">注销</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+                    <li class="layui-nav-item layui-this"><a href="../views/index.html">首页</a></li>
+                    <li class="layui-nav-item"><a href="../views/info.html">资料完善</a></li>
+                    <li class="layui-nav-item"><a href="../views/mygroup.html">我的团队</a></li>
+                    <li class="layui-nav-item"><a href="../views/withdraw.html">转账</a></li>
+                    <li class="layui-nav-item"><a href="../views/log.html">财务日志</a></li>
+                    <!--<li class="layui-nav-item"><a href="../views/group.html">邀请</a></li>-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <div style="padding: 100px;margin-top:20px;margin-left:20px;width:84%;height:68%; background-color: #F2F2F2;">
+                <fieldset class="layui-elem-field layui-field-title site-title">
+                    <legend><a name="grid">欢迎来到AIC，推荐好友得奖励</a></legend>
+                </fieldset>
+                <div class="layui-row layui-col-space15">
+                    <div style="width:600px;height:200px;margin-top:80px;float:left;background-color:#32C5D2;border-radius:30px;">
+                        <div style="margin-top:30px;margin-left:10px;color:#FFFFFF;font-size:20px">我的余额</div>
+                        <div style="margin-top:10px;margin-left:10px;color:#FFFFFF;font-size:50px" id="yue">AIC 0.0000</div>
+                    </div>
+                    <div style="width:600px;height:200px;margin-top:80px;margin-left:40px;float:left;background-color:#8E44AD;border-radius:30px;">
+                        <div style="margin-top:30px;margin-left:10px;color:#FFFFFF;font-size:20px">糖果奖励即将到来</div>
+                        <div style="margin-top:10px;margin-left:10px;color:#FFFFFF;font-size:50px">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            © layui.com - 底部固定区域
+            <a href="../../../control/indexcontrol.ashx">../../../control/indexcontrol.ashx</a>
+        </div>
+    </div>
+    <script src="../../start/layui/layui.js"></script>
+    <script>
+        var $;
+        //JavaScript代码区域
+        layui.use(['element','jquery'], function () {
+            var element = layui.element;
+            $ = layui.jquery;
+
+             let em = decodeURI(document.cookie).split('=');
+        let gr = document.getElementById("geren");
+        
+        var aObj = document.getElementById("en");
+        aObj.innerText = em[0];
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) { return pair[1]; }
+            }
+            return (false);
+        }
+        $.ajax({
+                type: 'post',
+                url: '/control/indexcontrol.ashx?functiontype=all',
+                cache: false,
+                data: {
+                    email: em[0]
+                },
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data)
+                    let yu = document.getElementById("yue");
+                    yu.innerText = "AIC " + data.data[0].number.toFixed(3) + "";
+                    gr.innerText = "AIC 个人中心（ID：" + data.data[0].ID + "）";
+                },
+            });
+        });
+       
+        logon();
+        function logon() {
+ 
+        }
+    </script>
+</body>
+</html>

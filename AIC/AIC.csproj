@@ -1,0 +1,476 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88B139D9-20B2-4510-97D2-6B631B40C82C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIC</RootNamespace>
+    <AssemblyName>AIC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar, Version=4.9.9.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sqlSugar.4.9.9.2\lib\SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\start\assets\fonts\fontawesome-webfont\.eot" />
+    <Content Include="admin\start\assets\fonts\fontawesome-webfont\v\4.6.3.eot" />
+    <Content Include="admin\start\assets\fonts\fontawesome-webfont\v\4.6.3.ttf" />
+    <Content Include="admin\start\assets\fonts\fontawesome-webfont\v\4.6.3.woff" />
+    <Content Include="admin\start\assets\fonts\fontawesome-webfont\v\4.6.3.woff2" />
+    <Content Include="admin\start\layui\css\modules\layim\html\getmsg.json" />
+    <Content Include="admin\start\layui\css\modules\layui-icon-extend\iconfont.eot" />
+    <Content Include="admin\start\layui\css\modules\layui-icon-extend\iconfont.ttf" />
+    <Content Include="admin\start\layui\css\modules\layui-icon-extend\iconfont.woff" />
+    <Content Include="admin\start\layui\css\modules\layui-icon-extend\iconfont.woff2" />
+    <Content Include="admin\start\layui\font\iconfont.eot" />
+    <Content Include="admin\start\layui\font\iconfont.ttf" />
+    <Content Include="admin\start\layui\font\iconfont.woff" />
+    <Content Include="admin\start\layui\font\iconfont_1.woff" />
+    <Content Include="control\indexcontrol.ashx" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\gulpfile.js" />
+    <Content Include="admin\src\alipay\lib\jquery-1.3.1.js" />
+    <Content Include="admin\src\alipay\lib\jquery.qrcode.min.js" />
+    <Content Include="admin\src\config.js" />
+    <Content Include="admin\src\controller\aliyun-oss-sdk.min.js" />
+    <Content Include="admin\src\controller\common.js" />
+    <Content Include="admin\src\controller\console.js" />
+    <Content Include="admin\src\controller\contlist.js" />
+    <Content Include="admin\src\controller\forum.js" />
+    <Content Include="admin\src\controller\sample.js" />
+    <Content Include="admin\src\controller\senior.js" />
+    <Content Include="admin\src\controller\set.js" />
+    <Content Include="admin\src\controller\user.js" />
+    <Content Include="admin\src\controller\useradmin.js" />
+    <Content Include="admin\src\controller\workorder.js" />
+    <Content Include="admin\src\index.js" />
+    <Content Include="admin\src\lib\admin.js" />
+    <Content Include="admin\src\lib\extend\city-picker\city-picker.css" />
+    <Content Include="admin\src\lib\extend\city-picker\city-picker.data.js" />
+    <Content Include="admin\src\lib\extend\city-picker\city-picker.js" />
+    <Content Include="admin\src\lib\extend\city-picker\drop-arrow.png" />
+    <Content Include="admin\src\lib\extend\city-picker\Nationaljson.js" />
+    <Content Include="admin\src\lib\extend\city-picker\selectM.js" />
+    <Content Include="admin\src\lib\extend\city-picker\selectN.js" />
+    <Content Include="admin\src\lib\extend\echarts.js" />
+    <Content Include="admin\src\lib\extend\echarts.min.js" />
+    <Content Include="admin\src\lib\extend\echartsTheme.js" />
+    <Content Include="admin\src\lib\extend\eleTree.js" />
+    <Content Include="admin\src\lib\extend\moment.js" />
+    <Content Include="admin\src\lib\extend\tableMerge.js" />
+    <Content Include="admin\src\lib\extend\timePicker.js" />
+    <Content Include="admin\src\lib\extend\viewer.min.js" />
+    <Content Include="admin\src\lib\view.js" />
+    <Content Include="admin\src\style\admin.css" />
+    <Content Include="admin\src\style\city-picker.css" />
+    <Content Include="admin\src\style\color\colpick.css" />
+    <Content Include="admin\src\style\color\colpick.js" />
+    <Content Include="admin\src\style\color\jquery.min.js" />
+    <Content Include="admin\src\style\color\jquery.treemenu.css" />
+    <Content Include="admin\src\style\color\jquery.treemenu.js" />
+    <Content Include="admin\src\style\color\normalize.css" />
+    <Content Include="admin\src\style\color\plugin.js" />
+    <Content Include="admin\src\style\color\style.css" />
+    <Content Include="admin\src\style\diqu.js" />
+    <Content Include="admin\src\style\drop-arrow.png" />
+    <Content Include="admin\src\style\eleTree.css" />
+    <Content Include="admin\src\style\login.css" />
+    <Content Include="admin\src\style\nav.css" />
+    <Content Include="admin\src\style\res\template\character.jpg" />
+    <Content Include="admin\src\style\res\template\character_1.jpg" />
+    <Content Include="admin\src\style\res\template\huge.jpg" />
+    <Content Include="admin\src\style\res\template\huge_1.jpg" />
+    <Content Include="admin\src\style\res\template\portrait.png" />
+    <Content Include="admin\src\style\res\template\portrait_1.png" />
+    <Content Include="admin\src\style\template.css" />
+    <Content Include="admin\src\style\timepicker.css" />
+    <Content Include="admin\src\style\viewer.min.css" />
+    <Content Include="admin\src\views\group.html" />
+    <Content Include="admin\src\views\index.html" />
+    <Content Include="admin\src\views\info.html" />
+    <Content Include="admin\src\views\log.html" />
+    <Content Include="admin\src\views\login.html" />
+    <Content Include="admin\src\views\mygroup.html" />
+    <Content Include="admin\src\views\register.html" />
+    <Content Include="admin\src\views\withdraw.html" />
+    <Content Include="admin\src\warehouseprint.js" />
+    <Content Include="admin\start\assets\css\amazeui.datatables.min.css" />
+    <Content Include="admin\start\assets\css\amazeui.min.css" />
+    <Content Include="admin\start\assets\css\app.css" />
+    <Content Include="admin\start\assets\css\slide-unlock.css" />
+    <Content Include="admin\start\assets\img\logoa.png" />
+    <Content Include="admin\start\assets\img\logob.png" />
+    <Content Include="admin\start\assets\js\amazeui.min.js" />
+    <Content Include="admin\start\assets\js\app.js" />
+    <Content Include="admin\start\assets\js\classie.js" />
+    <Content Include="admin\start\assets\js\jquery.min.js" />
+    <Content Include="admin\start\assets\js\jquery.slideunlock.js" />
+    <Content Include="admin\start\assets\js\theme.js" />
+    <Content Include="admin\start\assets\layer\layer.js" />
+    <Content Include="admin\start\index.html" />
+    <Content Include="admin\start\json\addressjson.js" />
+    <Content Include="admin\start\json\console\prograss.js" />
+    <Content Include="admin\start\json\console\top-card.js" />
+    <Content Include="admin\start\json\console\top-search.js" />
+    <Content Include="admin\start\json\content\comment.js" />
+    <Content Include="admin\start\json\content\list.js" />
+    <Content Include="admin\start\json\content\tags.js" />
+    <Content Include="admin\start\json\forum\list.js" />
+    <Content Include="admin\start\json\forum\replys.js" />
+    <Content Include="admin\start\json\layer\photos.js" />
+    <Content Include="admin\start\json\layim\getList.js" />
+    <Content Include="admin\start\json\layim\getMembers.js" />
+    <Content Include="admin\start\json\mall\order.js" />
+    <Content Include="admin\start\json\menu.js" />
+    <Content Include="admin\start\json\message\all.js" />
+    <Content Include="admin\start\json\message\detail.js" />
+    <Content Include="admin\start\json\message\direct.js" />
+    <Content Include="admin\start\json\message\new.js" />
+    <Content Include="admin\start\json\message\new_1.js" />
+    <Content Include="admin\start\json\message\notice.js" />
+    <Content Include="admin\start\json\table\demo.js" />
+    <Content Include="admin\start\json\table\demo2.js" />
+    <Content Include="admin\start\json\table\demo3.js" />
+    <Content Include="admin\start\json\table\user.js" />
+    <Content Include="admin\start\json\table\user30.js" />
+    <Content Include="admin\start\json\upload\demo.js" />
+    <Content Include="admin\start\json\upload\demo_1.js" />
+    <Content Include="admin\start\json\useradmin\mangadmin.js" />
+    <Content Include="admin\start\json\useradmin\role.js" />
+    <Content Include="admin\start\json\useradmin\webuser.js" />
+    <Content Include="admin\start\json\user\forget.js" />
+    <Content Include="admin\start\json\user\forget_1.js" />
+    <Content Include="admin\start\json\user\login.js" />
+    <Content Include="admin\start\json\user\login_1.js" />
+    <Content Include="admin\start\json\user\logout.js" />
+    <Content Include="admin\start\json\user\logout_1.js" />
+    <Content Include="admin\start\json\user\reg.js" />
+    <Content Include="admin\start\json\user\reg_1.js" />
+    <Content Include="admin\start\json\user\resetpass.js" />
+    <Content Include="admin\start\json\user\resetpass_1.js" />
+    <Content Include="admin\start\json\user\session.js" />
+    <Content Include="admin\start\json\user\session_1.js" />
+    <Content Include="admin\start\json\user\sms.js" />
+    <Content Include="admin\start\json\user\sms_1.js" />
+    <Content Include="admin\start\json\workorder\demo.js" />
+    <Content Include="admin\start\json\说明.txt" />
+    <Content Include="admin\start\json\说明_1.txt" />
+    <Content Include="admin\start\layui\css\formSelects-v4.css" />
+    <Content Include="admin\start\layui\css\layui.css" />
+    <Content Include="admin\start\layui\css\layui.mobile.css" />
+    <Content Include="admin\start\layui\css\modules\code.css" />
+    <Content Include="admin\start\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="admin\start\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="admin\start\layui\css\modules\layer\default\icon-ext_1.png" />
+    <Content Include="admin\start\layui\css\modules\layer\default\icon.png" />
+    <Content Include="admin\start\layui\css\modules\layer\default\icon_1.png" />
+    <Content Include="admin\start\layui\css\modules\layer\default\layer.css" />
+    <Content Include="admin\start\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="admin\start\layui\css\modules\layer\default\loading-0_1.gif" />
+    <Content Include="admin\start\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="admin\start\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="admin\start\layui\css\modules\layer\default\loading-2_1.gif" />
+    <Content Include="admin\start\layui\css\modules\layim\html\chatlog.html" />
+    <Content Include="admin\start\layui\css\modules\layim\html\find.html" />
+    <Content Include="admin\start\layui\css\modules\layim\html\msgbox.html" />
+    <Content Include="admin\start\layui\css\modules\layim\layim.css" />
+    <Content Include="admin\start\layui\css\modules\layim\mobile\layim.css" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\1.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\1_1.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\2.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\2_1.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\3.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\3_1.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\4.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\4_1.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\5.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\5_1.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\logo.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\skin\logo_1.jpg" />
+    <Content Include="admin\start\layui\css\modules\layim\voice\default.mp3" />
+    <Content Include="admin\start\layui\css\modules\layim\voice\default_1.mp3" />
+    <Content Include="admin\start\layui\css\modules\layui-icon-extend\demo.css" />
+    <Content Include="admin\start\layui\css\modules\layui-icon-extend\demo_index.html" />
+    <Content Include="admin\start\layui\css\modules\layui-icon-extend\iconfont.css" />
+    <Content Include="admin\start\layui\css\modules\layui-icon-extend\iconfont.js" />
+    <Content Include="admin\start\layui\css\modules\layui-icon-extend\iconfont.svg" />
+    <Content Include="admin\start\layui\font\iconfont.svg" />
+    <Content Include="admin\start\layui\formSelects-v4.css" />
+    <Content Include="admin\start\layui\formSelects-v4.js" />
+    <Content Include="admin\start\layui\images\face\0.gif" />
+    <Content Include="admin\start\layui\images\face\0_1.gif" />
+    <Content Include="admin\start\layui\images\face\1.gif" />
+    <Content Include="admin\start\layui\images\face\10.gif" />
+    <Content Include="admin\start\layui\images\face\11.gif" />
+    <Content Include="admin\start\layui\images\face\11_1.gif" />
+    <Content Include="admin\start\layui\images\face\12.gif" />
+    <Content Include="admin\start\layui\images\face\12_1.gif" />
+    <Content Include="admin\start\layui\images\face\13.gif" />
+    <Content Include="admin\start\layui\images\face\14.gif" />
+    <Content Include="admin\start\layui\images\face\14_1.gif" />
+    <Content Include="admin\start\layui\images\face\15.gif" />
+    <Content Include="admin\start\layui\images\face\16.gif" />
+    <Content Include="admin\start\layui\images\face\17.gif" />
+    <Content Include="admin\start\layui\images\face\18.gif" />
+    <Content Include="admin\start\layui\images\face\19.gif" />
+    <Content Include="admin\start\layui\images\face\2.gif" />
+    <Content Include="admin\start\layui\images\face\20.gif" />
+    <Content Include="admin\start\layui\images\face\20_1.gif" />
+    <Content Include="admin\start\layui\images\face\21.gif" />
+    <Content Include="admin\start\layui\images\face\22.gif" />
+    <Content Include="admin\start\layui\images\face\23.gif" />
+    <Content Include="admin\start\layui\images\face\24.gif" />
+    <Content Include="admin\start\layui\images\face\25.gif" />
+    <Content Include="admin\start\layui\images\face\26.gif" />
+    <Content Include="admin\start\layui\images\face\27.gif" />
+    <Content Include="admin\start\layui\images\face\27_1.gif" />
+    <Content Include="admin\start\layui\images\face\28.gif" />
+    <Content Include="admin\start\layui\images\face\29.gif" />
+    <Content Include="admin\start\layui\images\face\3.gif" />
+    <Content Include="admin\start\layui\images\face\30.gif" />
+    <Content Include="admin\start\layui\images\face\31.gif" />
+    <Content Include="admin\start\layui\images\face\31_1.gif" />
+    <Content Include="admin\start\layui\images\face\32.gif" />
+    <Content Include="admin\start\layui\images\face\32_1.gif" />
+    <Content Include="admin\start\layui\images\face\33.gif" />
+    <Content Include="admin\start\layui\images\face\33_1.gif" />
+    <Content Include="admin\start\layui\images\face\34.gif" />
+    <Content Include="admin\start\layui\images\face\34_1.gif" />
+    <Content Include="admin\start\layui\images\face\35.gif" />
+    <Content Include="admin\start\layui\images\face\35_1.gif" />
+    <Content Include="admin\start\layui\images\face\36.gif" />
+    <Content Include="admin\start\layui\images\face\36_1.gif" />
+    <Content Include="admin\start\layui\images\face\37.gif" />
+    <Content Include="admin\start\layui\images\face\37_1.gif" />
+    <Content Include="admin\start\layui\images\face\38.gif" />
+    <Content Include="admin\start\layui\images\face\39.gif" />
+    <Content Include="admin\start\layui\images\face\3_1.gif" />
+    <Content Include="admin\start\layui\images\face\4.gif" />
+    <Content Include="admin\start\layui\images\face\40.gif" />
+    <Content Include="admin\start\layui\images\face\40_1.gif" />
+    <Content Include="admin\start\layui\images\face\41.gif" />
+    <Content Include="admin\start\layui\images\face\42.gif" />
+    <Content Include="admin\start\layui\images\face\43.gif" />
+    <Content Include="admin\start\layui\images\face\43_1.gif" />
+    <Content Include="admin\start\layui\images\face\44.gif" />
+    <Content Include="admin\start\layui\images\face\45.gif" />
+    <Content Include="admin\start\layui\images\face\45_1.gif" />
+    <Content Include="admin\start\layui\images\face\46.gif" />
+    <Content Include="admin\start\layui\images\face\47.gif" />
+    <Content Include="admin\start\layui\images\face\48.gif" />
+    <Content Include="admin\start\layui\images\face\48_1.gif" />
+    <Content Include="admin\start\layui\images\face\49.gif" />
+    <Content Include="admin\start\layui\images\face\49_1.gif" />
+    <Content Include="admin\start\layui\images\face\5.gif" />
+    <Content Include="admin\start\layui\images\face\50.gif" />
+    <Content Include="admin\start\layui\images\face\51.gif" />
+    <Content Include="admin\start\layui\images\face\51_1.gif" />
+    <Content Include="admin\start\layui\images\face\52.gif" />
+    <Content Include="admin\start\layui\images\face\52_1.gif" />
+    <Content Include="admin\start\layui\images\face\53.gif" />
+    <Content Include="admin\start\layui\images\face\53_1.gif" />
+    <Content Include="admin\start\layui\images\face\54.gif" />
+    <Content Include="admin\start\layui\images\face\54_1.gif" />
+    <Content Include="admin\start\layui\images\face\55.gif" />
+    <Content Include="admin\start\layui\images\face\55_1.gif" />
+    <Content Include="admin\start\layui\images\face\56.gif" />
+    <Content Include="admin\start\layui\images\face\56_1.gif" />
+    <Content Include="admin\start\layui\images\face\57.gif" />
+    <Content Include="admin\start\layui\images\face\58.gif" />
+    <Content Include="admin\start\layui\images\face\59.gif" />
+    <Content Include="admin\start\layui\images\face\6.gif" />
+    <Content Include="admin\start\layui\images\face\60.gif" />
+    <Content Include="admin\start\layui\images\face\60_1.gif" />
+    <Content Include="admin\start\layui\images\face\61.gif" />
+    <Content Include="admin\start\layui\images\face\61_1.gif" />
+    <Content Include="admin\start\layui\images\face\62.gif" />
+    <Content Include="admin\start\layui\images\face\62_1.gif" />
+    <Content Include="admin\start\layui\images\face\63.gif" />
+    <Content Include="admin\start\layui\images\face\63_1.gif" />
+    <Content Include="admin\start\layui\images\face\64.gif" />
+    <Content Include="admin\start\layui\images\face\65.gif" />
+    <Content Include="admin\start\layui\images\face\65_1.gif" />
+    <Content Include="admin\start\layui\images\face\66.gif" />
+    <Content Include="admin\start\layui\images\face\67.gif" />
+    <Content Include="admin\start\layui\images\face\68.gif" />
+    <Content Include="admin\start\layui\images\face\68_1.gif" />
+    <Content Include="admin\start\layui\images\face\69.gif" />
+    <Content Include="admin\start\layui\images\face\69_1.gif" />
+    <Content Include="admin\start\layui\images\face\6_1.gif" />
+    <Content Include="admin\start\layui\images\face\7.gif" />
+    <Content Include="admin\start\layui\images\face\70.gif" />
+    <Content Include="admin\start\layui\images\face\70_1.gif" />
+    <Content Include="admin\start\layui\images\face\71.gif" />
+    <Content Include="admin\start\layui\images\face\8.gif" />
+    <Content Include="admin\start\layui\images\face\9.gif" />
+    <Content Include="admin\start\layui\layui.all.js" />
+    <Content Include="admin\start\layui\layui.js" />
+    <Content Include="admin\start\layui\lay\modules\carousel.js" />
+    <Content Include="admin\start\layui\lay\modules\code.js" />
+    <Content Include="admin\start\layui\lay\modules\colorpicker.js" />
+    <Content Include="admin\start\layui\lay\modules\element.js" />
+    <Content Include="admin\start\layui\lay\modules\flow.js" />
+    <Content Include="admin\start\layui\lay\modules\form.js" />
+    <Content Include="admin\start\layui\lay\modules\jquery.js" />
+    <Content Include="admin\start\layui\lay\modules\laydate.js" />
+    <Content Include="admin\start\layui\lay\modules\layedit.js" />
+    <Content Include="admin\start\layui\lay\modules\layer.js" />
+    <Content Include="admin\start\layui\lay\modules\layim.js" />
+    <Content Include="admin\start\layui\lay\modules\laypage.js" />
+    <Content Include="admin\start\layui\lay\modules\laytpl.js" />
+    <Content Include="admin\start\layui\lay\modules\mobile.js" />
+    <Content Include="admin\start\layui\lay\modules\rate.js" />
+    <Content Include="admin\start\layui\lay\modules\slider.js" />
+    <Content Include="admin\start\layui\lay\modules\table.js" />
+    <Content Include="admin\start\layui\lay\modules\tree.js" />
+    <Content Include="admin\start\layui\lay\modules\upload.js" />
+    <Content Include="admin\start\layui\lay\modules\util.js" />
+    <Content Include="admin\start\static\bg.jpg" />
+    <Content Include="admin\start\static\bg1.jpg" />
+    <Content Include="admin\start\static\bg2.jpg" />
+    <Content Include="admin\start\static\bgs.png" />
+    <Content Include="admin\start\static\bootstrap.css" />
+    <Content Include="admin\start\static\bootstrap.js" />
+    <Content Include="admin\start\static\bottom1.png" />
+    <Content Include="admin\start\static\bottom2.png" />
+    <Content Include="admin\start\static\close.png" />
+    <Content Include="admin\start\static\con1.png" />
+    <Content Include="admin\start\static\con2.png" />
+    <Content Include="admin\start\static\con3.png" />
+    <Content Include="admin\start\static\con4.png" />
+    <Content Include="admin\start\static\custom.css" />
+    <Content Include="admin\start\static\db.png" />
+    <Content Include="admin\start\static\easing.js" />
+    <Content Include="admin\start\static\echarts.min.js" />
+    <Content Include="admin\start\static\email.png" />
+    <Content Include="admin\start\static\er.png" />
+    <Content Include="admin\start\static\font-awesome.css" />
+    <Content Include="admin\start\static\g1.jpg" />
+    <Content Include="admin\start\static\g2.jpg" />
+    <Content Include="admin\start\static\g3.jpg" />
+    <Content Include="admin\start\static\iconfont.css" />
+    <Content Include="admin\start\static\left-1.png" />
+    <Content Include="admin\start\static\left.png" />
+    <Content Include="admin\start\static\lingdang.png" />
+    <Content Include="admin\start\static\logo.png" />
+    <Content Include="admin\start\static\masonry.pkgd.min.js" />
+    <Content Include="admin\start\static\move-top.js" />
+    <Content Include="admin\start\static\owl.carousel.css" />
+    <Content Include="admin\start\static\responsiveslides.min.js" />
+    <Content Include="admin\start\static\right-1.png" />
+    <Content Include="admin\start\static\right.png" />
+    <Content Include="admin\start\static\Scene.png" />
+    <Content Include="admin\start\static\search.png" />
+    <Content Include="admin\start\static\style.css" />
+    <Content Include="admin\start\static\tick.png" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="control\indexcontrol.ashx.cs">
+      <DependentUpon>indexcontrol.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="admin\src\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\denturebll\denturebll.csproj">
+      <Project>{80b52919-61b6-407f-9ac6-cce7cf43a915}</Project>
+      <Name>denturebll</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63062</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63062/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

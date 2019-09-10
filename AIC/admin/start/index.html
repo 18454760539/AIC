@@ -1,0 +1,725 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>sgl</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <link href="layui/css/modules/layui-icon-extend/iconfont.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/admin/start/layui/formSelects-v4.css" />
+    <script src="/admin/src/warehouseprint.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="/admin/src/lib/extend/city-picker/city-picker.data.js"></script>
+    <script src="/admin/src/lib/extend/viewer.min.js"></script>
+    <script src="/admin/src/lib/extend/city-picker/selectM.js"></script>
+    <script src="/admin/src/lib/extend/city-picker/selectN.js"></script>
+    <script src="/admin/start/layui/formSelects-v4.js" type="text/javascript" charset="utf-8"></script>
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link rel="stylesheet" href="/admin/start/static/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="/admin/start/static/style.css" type="text/css" media="all"> <!-- Style-CSS -->
+    <link rel="stylesheet" href="/admin/start/static/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+    <link rel="stylesheet" type="text/css" href="/admin/start/static/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/admin/start/static/custom.css">
+    <!-- //css files -->
+    <link rel="stylesheet" href="/admin/start/static/owl.carousel.css" type="text/css" media="all">
+    <script src="/admin/start/assets/js/jquery.min.js"></script>
+    <script src="/admin/start/static/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/admin/start/static/masonry.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<style>
+    .spldishes-agileinfo > h4 {
+        line-height: 60px;
+    }
+
+    .cwios {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cwios1 {
+        width: 33%;
+        height: 50%;
+        display: inline-block;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .cwios > .cwios1:first-child {
+        border-right: 1px solid #CCCCCC;
+    }
+
+    .cwios > .cwios1:last-child {
+        border-left: 1px solid #CCCCCC;
+        /*position:relative;*/
+        /*top:40px*/
+    }
+
+    .cwios1 > h4 {
+        line-height: 60px;
+    }
+
+    .huadong {
+        width: 100%;
+        height: 4rem;
+        padding: 0.5rem 0 0.3rem 0;
+        border-bottom: 1px solid #F0F0F0;
+        position: relative;
+        font: 12px/1.5 "Hiragino Sans GB","Microsoft YaHei",simsun;
+        margin: 0 auto;
+    }
+
+        .huadong .huabox {
+            margin: 0 auto;
+            width: 80%;
+            line-height: 4rem;
+        }
+
+        .huadong .hdimg {
+            float: left;
+            line-height: 3.5rem;
+        }
+
+            .huadong .hdimg img {
+                width: 100%;
+                vertical-align: middle;
+            }
+
+        .huadong h5 {
+            font-size: 1rem;
+            float: left;
+            line-height: 2.2rem;
+            margin: 0.8rem 0 0 0;
+        }
+
+        .huadong .gg_more {
+            float: left;
+        }
+
+            .huadong .gg_more a {
+                font-size: 0.8rem;
+                text-decoration: none;
+            }
+
+        .huadong .notice_active {
+            float: left;
+            width: 90%;
+            height: 4rem;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .huadong .notice_active li {
+                list-style-type: none;
+                line-height: 2.4rem;
+                overflow: hidden;
+            }
+                /*.huadong .notice_active li.notice_active_ch {}*/
+                .huadong .notice_active li.notice_active_ch span {
+                    color: #656972;
+                    font-size: 1rem;
+                    display: block;
+                    overflow: hidden;
+                    width: 100%;
+                    float: left;
+                    overflow: hidden;
+                    margin: 0 0 2rem 0;
+                }
+
+        .huadong .gg_more .news_ck {
+            float: left;
+            margin: 0 1rem 0 1rem;
+            color: #888;
+            width: 5rem;
+            height: 2rem;
+            line-height: 2rem;
+            display: block;
+            border: 1px solid #656972;
+            text-align: center;
+            border-radius: 0.7rem;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .huadong .notice_active li.notice_active_ch em {
+            text-align: right;
+            float: right;
+            color: #888;
+            font-size: 0.8rem;
+            font-style: normal;
+        }
+
+    @media (max-width: 384px) {
+        .huadong {
+            height: 12rem;
+        }
+
+            .huadong h5 {
+                display: none;
+            }
+
+            .huadong .hdimg {
+                display: none;
+            }
+
+            .huadong .notice_active {
+                width: 100%;
+                height: 12rem;
+            }
+
+            .huadong .huabox {
+                width: 98%;
+                line-height: 12rem;
+            }
+    }
+</style>
+<body>
+    <script type="text/javascript">
+                                    function timer(opj) {
+                                        $(opj).find('ul').animate({
+                                            marginTop: "-3.5rem"
+                                        }, 500, function () {
+                                            $(this).css({ marginTop: "0.7rem" }).find("li:first").appendTo(this);
+                                        })
+                                    }
+                                    $(function () {
+                                        var num = $('.notice_active').find('li').length;
+                                        if (num > 1) {
+                                            var time = setInterval('timer(".notice_active")', 6000);
+                                        }
+            });
+    </script>
+    <div class="huadong">
+        <div class="huabox">
+            <div class="hdimg"><img src="/admin/start/static/lingdang.png"></div>
+            <h5>【公告】</h5>
+            <div class="notice_active">
+                <ul>
+                    <li class="notice_active_ch">
+                        <span>1、#imToken# #4620# 我们正在完善 AIC 在 imToken 中的代币相关资料。完成后，大家可以在 imToken 里看到 logo，更方便地管理 AIC，同时能看到更多代币信息。</span>
+                    </li>
+                    <li class="notice_active_ch">
+                        <span>
+                            2、AIC官方平台近期联系交易所已经确定了首发两家，大家可以先到交易所注册。另外，进群没邀请没注册的会员均可以领取50枚空投币，
+                            群主建群需要注册官网群里推广会员注册官网，会员注册可得官网注册的500币，
+                            进群可以不注册，每人空投50枚AIC，邀请一人得10枚AIC，以上奖励加客服VX：yjl8881688领取
+                        </span>
+
+                    </li>
+                    <li class="notice_active_ch">
+                        <span>3、AIC即将登陆<a href="http://www.qunbi.vip" target="_blank">www.qunbi.vip</a>和<a href="https://www.7xex.com/#/notices/noticeDetail?id=210" target="_blank">www.7xex.com</a>两家交易所，请大家前往交易所注册，以便提现AIC。提现时间等待通知！</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-agile">
+        <!-- header -->
+
+        <div class="header-bottom">
+            <!-- navigation section -->
+            <div class="w3_navigation">
+                <div class="container">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header navbar-left">
+
+                            <div class="logo">
+                                <h1>
+                                    <a class="navbar-brand" href="/">
+                                        <img src="/admin/start/static/logo.png" alt="" style="position:relative;top:-18px">
+                                    </a>
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class=" navbar-right">
+                            <nav class="menu menu--miranda">
+                                <ul class="nav navbar-nav menu__list">
+                                    <li class="menu__item menu__item--current"><a href="/admin/start/index.html" class="menu__link">首页</a></li>
+                                    <li class="menu__item"><a href="/whitepaper.pdf" target="_blank" class="menu__link">白皮书</a></li>
+                                    <li class="menu__item"><a href="/admin/src/views/login.html" class="menu__link">登录</a></li>
+                                    <li class="menu__item"><a href="/admin/src/views/register.html" target="_blank">注册</a>
+                                    <li class="menu__item"><a onclick="ad()">123</a>
+                                </ul>
+                            </nav>
+                        </div>
+                    </nav>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider">
+        <div class="callbacks_container">
+            <ul class="rslides callbacks callbacks1" id="slider">
+                <li id="callbacks1_s0" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 1000ms ease-in-out;">
+                    <div class="w3layouts-banner-top w3layouts-banner-top1">
+                        <div class="container">
+                            <div class="slider-info">
+                                <h3>人工智能与物联网</h3>
+                                <h4>
+                                    当今世界信息产业发展的第三浪潮无疑是物联网的崛起， 它是继计算机、 互联网之后的又一信息
+                                    化时代的变革。 物联网， 就是通过智能感知、 识别技术与普适计算等通信感知技术， 应用在网络
+                                    与实物的融合中。
+                                </h4>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li id="callbacks1_s1" class="callbacks1_on" style="display: block; float: left; position: relative; opacity: 1; z-index: 2; transition: opacity 1000ms ease-in-out;">
+                    <div class="w3layouts-banner-top">
+                        <div class="container">
+                            <div class="slider-info">
+                                <h3>有需求就有市场</h3>
+                                <h4>
+                                    随着人工智能技术
+                                    的不断发展和完善， 市场上的智能家居产品也不断增加， 而
+                                    绝大多数家居产品的科技含量是有限的， 很大程度上那以满
+                                    足不断升级的智能化生活需求， 因此您好科技不断对人工智
+                                    能和物联网技术进行探索， 为用户提供专属的人工智能定制
+                                    方案， 提升人工智能产品的使用和服务质量。
+                                </h4>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li id="callbacks1_s2" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 1000ms ease-in-out;">
+                    <div class="w3layouts-banner-top w3layouts-banner-top2">
+                        <div class="container">
+                            <div class="slider-info">
+                                <h3>AIC 全球物联网价值链介绍</h3>
+                                <h4>AIC（Artificial Intelligence Internet of Things Chain）开源社区是一个旨在推进物联网及AI机器人之间数据互联、交易结算、智能合约的去中心化区块链技术开放平台。今天，人类已经进入 AI 时代，AI 能说、能听、能看、能动、能思考，接近人类水平。AIC 社区的目标就是将 AI、物联网、数据之间利用 AIC 技术连接在一起，通过智能合约及物权交易，让人类成为物联网及 AI 机器人财富的真正受益者。</h4>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul><a href="/home/index/index.html" class="callbacks_nav callbacks1_nav prev">Previous</a><a href="/index.html" class="callbacks_nav callbacks1_nav next">Next</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- //Slider -->
+    <!--about-->
+    <div class="about">
+        <div class="container">
+            <div class="about-main">
+                <div class="col-md-6 about-left_w3ls_img">
+                    <div class="about-left1_w3ls_img">
+
+                    </div>
+                </div>
+                <div class="col-md-6 about-right_w3ls">
+                    <div class="about-top_agile_its">
+                        <h3><a style="color:#FFB652">AI</a>C</h3>
+                        <h5>AIC 全球物联网价值链</h5>
+                        <p style="font-size: 25px">区块链节点 . DAG节点</p>
+                        <p>
+                            区块链节点的设计保证了去中心化全球数据库中数据的安全、 可信与不可篡改的。
+                        </p>
+                        <p>
+                            区块链新节点添加， 需要网络中的区块链节点审核。 收拢 DAG 数据结构， 使之不会一直发散下
+                            去。 DAG 节点通过父母单元验证算法， 实现快速交易。
+                        </p>
+                        <p>
+                            解决了传统区块链结构中产生的分片的无序单元之间的双重支付、 与数据篡改的问题， 解决了， 因发现
+                            分片不及时可能导致的大量交易最终无效的问题。
+                        </p>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- //about -->
+    <!-- welcome -->
+    <div class="welcome all_pad wthree">
+        <div class="container">
+            <!--<h3 class="title">Welcome To Corporate<span></span></h3> -->
+
+            <div class="wel-grids">
+                <div class="col-md-6 wel-grid-one bor_one text-center wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="0s">
+                    <div class="wel-img">
+                        <!--<i class="fa fa-database" aria-hidden="true"></i>-->
+                        <img src="/admin/start/static/con4.png" style="width: 80px" alt="">
+                    </div>
+                    <h4>AIC区块有向无环链</h4>
+                    <p>
+                        AIC(Artificial Intelligence Internet of Things Chain)智物链， 是一个特殊的
+                        去中心化系统， 他结合了两种技术， 区块链账本与有向无环图。 因此包含了两种不同的节点， 它们分
+                        工有序且数据保持同步， 缺一不可。
+                    </p>
+                </div>
+                <div class="col-md-6 wel-grid-one bor_two text-center wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                    <div class="wel-img">
+                        <!--<i class="fa fa-group icon" aria-hidden="true"></i>-->
+                        <img src="/admin/start/static/con2.png" style="width: 87px" alt="">
+                    </div>
+                    <h4>AIC 公链数据结构</h4>
+                    <p>
+                        通过 DAG 节点来接收交易， 并将交易数据记录到区块链上， 使区块链产生新的区块。 DAG 节点
+                        在进行交易验证时， 先通过父母单元进行初步验证， 迅速完成交易。 交易提交到区块链上从而完成账
+                        本。
+                    </p>
+                </div>
+                <div class="col-md-6 wel-grid-one bor_three text-center wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                    <div class="wel-img">
+                        <!--<i class="fa fa-external-link" aria-hidden="true"></i>-->
+                        <img src="/admin/start/static/con3.png" style="width: 90px;height: 94px;" alt="">
+                    </div>
+                    <h4>区块链数据结构</h4>
+                    <p>
+                        区块链包含一张被称为区块的列表， 有着持续增长并且排列整齐的记录。 每个区块都包 含一个
+                        时间戳和一个与前一区块的链接， 区块链这样的设计使得数据不可篡改， 一旦记录下来， 在一个区块
+                        中的数据将不可逆。
+                    </p>
+                </div>
+                <div class="col-md-6 wel-grid-one bor_four text-center wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
+                    <div class="wel-img">
+                        <!--<i class="fa fa-briefcase icon" aria-hidden="true"></i>-->
+                        <img src="/admin/start/static/con1.png" style="width: 90px" alt="">
+                    </div>
+                    <h4>DAG 共识</h4>
+                    <p>
+                        为了使 DAG 尽可能地精确， 尽可能多地包含父单元， 如前所述， 这不会对应付的大小产生负面
+                        影响。 并且尽可能地通过那些最初作为父单元将其包含的单元费用的支付部分成为最近的父单元。
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //welcome -->
+    <!--team-->
+    <div class="team">
+        <div class="w3agile-spldishes">
+            <div class="container">
+
+                <div class="w3-agileits-heading">
+                    <h3 class="title">AIC 物联网价值链的应用场景</h3>
+                </div>
+                <div class="spldishes-agileinfo" style="text-align: center">
+                    <h4>智能家庭 AI 机器人平台</h4>
+                    <p>
+                        家庭 AI 机器人， 是 AIC 将物联网及区块链技术进入实际落地应用的关键产品， 也是 AIC 去中心
+                        化网络的核心节点。 目前 AIC 基金会与知名 AI 服务商 IMIO Labs 合作， 在其广受好评的家庭智能语
+                        音网关产品上，共同开发全球第一款应用区块链技术，拥有智能合约，并可以自动结算的家庭用 AI 机
+                        器人产品。
+                    </p>
+
+                    <h4>AI 硬件智能合约平台</h4>
+                    <p>
+                        智能合约平台是 AIC 公链的基础也是最核心的应用平台。 基于智能合约， 设备、 对象、 数据、 逻
+                        辑方法、 凭证等可以完美的在 AIC 公链上进行组织和执行， 并为 AIC 其他应用提供运行的环境和解
+                        释系统。
+                    </p>
+
+                    <h4>AI 物联网数据交易平台</h4>
+                    <p>
+                        AIC 数据交易平台是 AIC 积分代币系统流通的重要基础平台。 在此平台上， 设备厂商可以建立采集
+                        数据、 销售数据的渠道， 并增加设备的获益功能， 以吸引更多的用户购买； 设备用户， 可以通过此渠
+                        道提供个人数据以获取收益； 数据购买方， 如广告主， 也可以利用此平台精准定位用户， 获取用户画
+                        像数据， 并以更低的价格高效的达到传播目的。
+                    </p>
+
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//team-->
+    <style>
+        .logos {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+            flex-wrap: wrap;
+        }
+
+            .logos > sapn > img {
+                width: 150px;
+            }
+
+        .logobotom {
+            width: 50px;
+        }
+
+        .logobotom {
+            margin-left: 20px;
+        }
+    </style>
+    <!-- subscribe section -->
+    <div class="faxing">
+        <div class="container">
+            <div class="col-md-12 data-top   wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+
+                <h1 class="col-md-12 data-echarts-tetil">
+                    <span>AIC数字货币发行计划</span>
+                </h1>
+                <div class="col-md-12 data-echarts-wrap">
+                    <div class="data-echarts col-md-5">
+                        <div>
+                            <h2>各版块所占量</h2>
+                            <div id="mian" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: rgba(0, 0, 0, 0);" _echarts_instance_="ec_1560169356113"><div style="position: relative; overflow: hidden; width: 346px; height: 346px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="346" height="346" style="position: absolute; left: 0px; top: 0px; width: 346px; height: 346px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+                        </div>
+                    </div>
+                    <div class="clearfix data-list col-md-7">
+                        <dl class="col-xs-6 data-list-item">
+                            <dt class="iconfont icon-icon-test left"></dt>
+                            <dd class="data-iten-text">
+                                <h3>空投30%</h3>
+                                <p>市场推广、 项目社区建设。</p>
+                            </dd>
+                        </dl>
+                        <dl class="col-xs-6 data-list-item">
+                            <dt class="iconfont icon-shengtai left"></dt>
+                            <dd class="data-iten-text">
+                                <h3>奖励20%</h3>
+                                <p>用于物联网设备的结算交易。</p>
+                            </dd>
+                        </dl>
+                        <dl class="col-xs-6 data-list-item">
+                            <dt class="iconfont icon-tuandui left"></dt>
+                            <dd class="data-iten-text">
+                                <h3>团队10%</h3>
+                                <p>在AIC的创建初期和发展过程中做出了人力、 资源以及技术的贡献， OPTC 作为奖励进行发放。</p>
+                            </dd>
+                        </dl>
+                        <dl class="col-xs-6 data-list-item">
+                            <dt class="iconfont icon-touzi left"></dt>
+                            <dd class="data-iten-text">
+                                <h3>运营15%</h3>
+                                <p>用于AIC的市场推广。</p>
+                            </dd>
+                        </dl>
+                        <dl class="col-xs-6 data-list-item">
+                            <dt class="iconfont icon-zongduan left"></dt>
+                            <dd class="data-iten-text">
+                                <h3>基金会25%</h3>
+                                <p>
+                                    作为AIC的备用金， 用于后续项目
+                                    开发、 项目扶持、 硬件成本及推广运营。
+                                </p>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="col-md-12 data-bottom">
+                <div class="col-md-8 data-box">
+                    <div class="col-md-12 data-num-wrap clearfix wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="col-xs-6 data-num data-num-left">
+                            <p>总发行量</p>
+                            <h2>500000000 AIC</h2>
+                        </div>
+                        <div class="col-xs-6 data-num data-num-right">
+                            <p>兑换比例</p>
+                            <h2>1 ETH=2500 AIC</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-12 progress-box-wrpa wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <h3 class="col-md-12 progress-box-tetil">总发行量（TOTAL DISTRIBUTION）</h3>
+                        <div class="col-md-12 progress-box">
+                            <div class="arrow-box" style="left: 30%;">
+                                      <h1><span id="arrow_num">150000000</span> AIC</h1>
+                            </div>
+                            <div class="progress my-progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                                </div>
+                                <div class="my-progress-box" style="width: 40%;"></div>
+                                <span>3亿锁仓</span>
+                            </div>
+                            <span class="progress-box-num progress-box-left">0 TMET</span>
+                            <span class="progress-box-num progress-box-right">500000000 TMET</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 data-card wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="col-md-12 data-card-img">
+                        <img src="/admin/start/static/er.png" alt="">
+                        <p>0xEe3dc775669d2415cad8b5b424E6C97Ad60eBEF5</p>
+                        <p>自动兑换须知：自定义Gas Price 150     自定义Gas 300000</p>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer w3ls">
+        <div class="footer-2 w3ls">
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footer-top">
+                        <div class="col-md-4 ftr-grid fg2">
+                            <h3>联系我们</h3>
+                            <div class="ftr-address">
+                                <div class="local">
+                                    <img src="/admin/start/static/db.png" width="20" alt="" style="position: relative;top:20px">
+                                </div>
+                                <div class="ftr-text">
+                                    <p><a href="https://aic.io"></a>https://</p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="ftr-address">
+                                <div class="local">
+                                    <img src="/admin/start/static/email.png" width="20" alt="" style="position: relative;top:20px">
+                                </div>
+                                <div class="ftr-text">
+                                    <p><a href="###">support@</a></p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 ftr-grid">
+                            <div class="logo-fo">
+                                <h2><a href="/">AIC</a></h2>
+                            </div>
+                        </div>
+                        <div class="col-md-4 w3l_header_left-2">
+                            <div class="w3ls-social-icons-2">
+                                <img class="logobotom" src="/admin/start/static/bottom1.png" alt="">
+                                <img class="logobotom" src="/admin/start/static/bottom2.png" alt="">
+
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyrights">
+            <p>Copyright © 2019 AIC All rights reserved.</p>
+        </div>
+    </div>
+    <!-- //Footer -->
+    <!-- js-scripts -->
+    <!-- js -->
+    <script type="text/javascript" src="/admin/start/static/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/admin/start/static/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+    <!-- //js -->
+    <!-- Baneer-js -->
+    <script src="/admin/start/static/responsiveslides.min.js"></script>
+    <script>
+                                $(function () {
+                                    $("#slider").responsiveSlides({
+                                        auto: true,
+                                        pager:false,
+                                        nav: true,
+                                        speed: 1000,
+                                        namespace: "callbacks",
+                                        before: function () {
+                                            $('.events').append("<li>before event fired.</li>");
+                                        },
+                                        after: function () {
+                                            $('.events').append("<li>after event fired.</li>");
+                                        }
+                                    });
+                                });
+    </script>
+    <!-- //Baneer-js -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="/admin/start/static/move-top.js"></script>
+    <script type="text/javascript" src="/admin/start/static/easing.js"></script>
+    <script type="text/javascript">
+                            jQuery(document).ready(function($) {
+                                $(".scroll").click(function(event){
+                                    event.preventDefault();
+                                    $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+                                });
+                            });
+    </script>
+
+
+    <script type="text/javascript">
+                                       var myChart = echarts.init(document.getElementById('mian'), 'customed');
+                                    option = {
+                                        tooltip: {
+                                            trigger: 'item',
+                                            formatter: "{a} <br/>{b}"
+                                        },
+                                        series: [{
+                                            name: '各版块所占量',
+                                            type: 'pie',
+                                            radius: ['60%', '90%'],
+                                            avoidLabelOverlap: false,
+                                            label: {
+                                                normal: {
+                                                    show: false
+                                                }
+                                            },
+                                            label: {
+                                                normal: {
+                                                    show: true,
+                                                    position: 'inner',
+                                                    textStyle : {
+                                                                    fontWeight : 300 ,
+                                                                    fontSize : 16    //文字的字体大小
+                                                                },
+                                                                formatter:'{d}%'
+                                                },
+                                                emphasis: {
+                                                    show: true,
+                                                    textStyle: {
+                                                        fontSize: '16',
+                                                        fontWeight: 'bold'
+                                                    }
+                                                }
+                                            },
+                                            data: [{
+                                                    value: 30,
+                                                    name: '空投30%'
+                                                },
+                                                {
+                                                    value: 20,
+                                                    name: '奖励20%'
+                                                },
+                                                {
+                                                    value: 10,
+                                                    name: '团队10%'
+                                                },
+                                                {
+                                                    value: 15,
+                                                    name: '运营15%'
+                                                },
+                                                {
+                                                    value: 25,
+                                                    name: '基金会25%'
+                                                }
+                                            ]
+                                        }]
+                                    };
+                                    myChart.setOption(option);
+                                    window.onresize = myChart.resize;
+
+
+
+                                    $(function(){
+                                        $(".arrow-box").css('left',"30%");
+                                    })
+
+                                    $(window).resize(function(){
+                                        var _width = $(".my-progress .progress-bar").width();
+                                        var _body_width = $("body").width();
+
+                                        if(_body_width<992){
+                                            $(".arrow-box").css('left',"50%");
+                                        }
+                                    })
+
+    </script>
+    </script>
+</body>
+</html>

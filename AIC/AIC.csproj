@@ -78,6 +78,7 @@
     <Content Include="admin\start\layui\font\iconfont.ttf" />
     <Content Include="admin\start\layui\font\iconfont.woff" />
     <Content Include="admin\start\layui\font\iconfont_1.woff" />
+    <Content Include="control\logincontrol.ashx" />
     <Content Include="control\indexcontrol.ashx" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
@@ -429,6 +430,9 @@
   <ItemGroup>
     <Compile Include="control\indexcontrol.ashx.cs">
       <DependentUpon>indexcontrol.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="control\logincontrol.ashx.cs">
+      <DependentUpon>logincontrol.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

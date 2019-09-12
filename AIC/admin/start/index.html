@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>sgl</title>
+    <title>AIC</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -31,170 +31,171 @@
     <script src="/admin/start/static/masonry.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
-<style>
-    .spldishes-agileinfo > h4 {
-        line-height: 60px;
-    }
+<body>
 
-    .cwios {
-        width: 100%;
-        height: 300px;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .cwios1 {
-        width: 33%;
-        height: 50%;
-        display: inline-block;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .cwios > .cwios1:first-child {
-        border-right: 1px solid #CCCCCC;
-    }
-
-    .cwios > .cwios1:last-child {
-        border-left: 1px solid #CCCCCC;
-        /*position:relative;*/
-        /*top:40px*/
-    }
-
-    .cwios1 > h4 {
-        line-height: 60px;
-    }
-
-    .huadong {
-        width: 100%;
-        height: 4rem;
-        padding: 0.5rem 0 0.3rem 0;
-        border-bottom: 1px solid #F0F0F0;
-        position: relative;
-        font: 12px/1.5 "Hiragino Sans GB","Microsoft YaHei",simsun;
-        margin: 0 auto;
-    }
-
-        .huadong .huabox {
-            margin: 0 auto;
-            width: 80%;
-            line-height: 4rem;
+    <style>
+        .spldishes-agileinfo > h4 {
+            line-height: 60px;
         }
 
-        .huadong .hdimg {
-            float: left;
-            line-height: 3.5rem;
+        .cwios {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: space-between;
         }
 
-            .huadong .hdimg img {
-                width: 100%;
-                vertical-align: middle;
-            }
-
-        .huadong h5 {
-            font-size: 1rem;
-            float: left;
-            line-height: 2.2rem;
-            margin: 0.8rem 0 0 0;
+        .cwios1 {
+            width: 33%;
+            height: 50%;
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
-        .huadong .gg_more {
-            float: left;
+        .cwios > .cwios1:first-child {
+            border-right: 1px solid #CCCCCC;
         }
 
-            .huadong .gg_more a {
-                font-size: 0.8rem;
-                text-decoration: none;
-            }
-
-        .huadong .notice_active {
-            float: left;
-            width: 90%;
-            height: 4rem;
-            padding: 0;
-            overflow: hidden;
-            position: relative;
+        .cwios > .cwios1:last-child {
+            border-left: 1px solid #CCCCCC;
+            /*position:relative;*/
+            /*top:40px*/
         }
 
-            .huadong .notice_active li {
-                list-style-type: none;
-                line-height: 2.4rem;
-                overflow: hidden;
-            }
-                /*.huadong .notice_active li.notice_active_ch {}*/
-                .huadong .notice_active li.notice_active_ch span {
-                    color: #656972;
-                    font-size: 1rem;
-                    display: block;
-                    overflow: hidden;
-                    width: 100%;
-                    float: left;
-                    overflow: hidden;
-                    margin: 0 0 2rem 0;
-                }
-
-        .huadong .gg_more .news_ck {
-            float: left;
-            margin: 0 1rem 0 1rem;
-            color: #888;
-            width: 5rem;
-            height: 2rem;
-            line-height: 2rem;
-            display: block;
-            border: 1px solid #656972;
-            text-align: center;
-            border-radius: 0.7rem;
-            font-size: 0.8rem;
-            margin-top: 1rem;
+        .cwios1 > h4 {
+            line-height: 60px;
         }
 
-        .huadong .notice_active li.notice_active_ch em {
-            text-align: right;
-            float: right;
-            color: #888;
-            font-size: 0.8rem;
-            font-style: normal;
-        }
-
-    @media (max-width: 384px) {
         .huadong {
-            height: 12rem;
+            width: 100%;
+            height: 4rem;
+            padding: 0.5rem 0 0.3rem 0;
+            border-bottom: 1px solid #F0F0F0;
+            position: relative;
+            font: 12px/1.5 "Hiragino Sans GB","Microsoft YaHei",simsun;
+            margin: 0 auto;
         }
 
-            .huadong h5 {
-                display: none;
+            .huadong .huabox {
+                margin: 0 auto;
+                width: 80%;
+                line-height: 4rem;
             }
 
             .huadong .hdimg {
-                display: none;
+                float: left;
+                line-height: 3.5rem;
             }
 
+                .huadong .hdimg img {
+                    width: 100%;
+                    vertical-align: middle;
+                }
+
+            .huadong h5 {
+                font-size: 1rem;
+                float: left;
+                line-height: 2.2rem;
+                margin: 0.8rem 0 0 0;
+            }
+
+            .huadong .gg_more {
+                float: left;
+            }
+
+                .huadong .gg_more a {
+                    font-size: 0.8rem;
+                    text-decoration: none;
+                }
+
             .huadong .notice_active {
-                width: 100%;
+                float: left;
+                width: 90%;
+                height: 4rem;
+                padding: 0;
+                overflow: hidden;
+                position: relative;
+            }
+
+                .huadong .notice_active li {
+                    list-style-type: none;
+                    line-height: 2.4rem;
+                    overflow: hidden;
+                }
+                    /*.huadong .notice_active li.notice_active_ch {}*/
+                    .huadong .notice_active li.notice_active_ch span {
+                        color: #656972;
+                        font-size: 1rem;
+                        display: block;
+                        overflow: hidden;
+                        width: 100%;
+                        float: left;
+                        overflow: hidden;
+                        margin: 0 0 2rem 0;
+                    }
+
+            .huadong .gg_more .news_ck {
+                float: left;
+                margin: 0 1rem 0 1rem;
+                color: #888;
+                width: 5rem;
+                height: 2rem;
+                line-height: 2rem;
+                display: block;
+                border: 1px solid #656972;
+                text-align: center;
+                border-radius: 0.7rem;
+                font-size: 0.8rem;
+                margin-top: 1rem;
+            }
+
+            .huadong .notice_active li.notice_active_ch em {
+                text-align: right;
+                float: right;
+                color: #888;
+                font-size: 0.8rem;
+                font-style: normal;
+            }
+
+        @media (max-width: 384px) {
+            .huadong {
                 height: 12rem;
             }
 
-            .huadong .huabox {
-                width: 98%;
-                line-height: 12rem;
-            }
-    }
-</style>
-<body>
+                .huadong h5 {
+                    display: none;
+                }
+
+                .huadong .hdimg {
+                    display: none;
+                }
+
+                .huadong .notice_active {
+                    width: 100%;
+                    height: 12rem;
+                }
+
+                .huadong .huabox {
+                    width: 98%;
+                    line-height: 12rem;
+                }
+        }
+    </style>
     <script type="text/javascript">
-                                    function timer(opj) {
-                                        $(opj).find('ul').animate({
-                                            marginTop: "-3.5rem"
-                                        }, 500, function () {
-                                            $(this).css({ marginTop: "0.7rem" }).find("li:first").appendTo(this);
-                                        })
-                                    }
-                                    $(function () {
-                                        var num = $('.notice_active').find('li').length;
-                                        if (num > 1) {
-                                            var time = setInterval('timer(".notice_active")', 6000);
-                                        }
-            });
+        function timer(opj) {
+            $(opj).find('ul').animate({
+                marginTop: "-3.5rem"
+            }, 500, function () {
+                $(this).css({ marginTop: "0.7rem" }).find("li:first").appendTo(this);
+            })
+        }
+        $(function () {
+            var num = $('.notice_active').find('li').length;
+            if (num > 1) {
+                var time = setInterval('timer(".notice_active")', 6000);
+            }
+        });
     </script>
     <div class="huadong">
         <div class="huabox">
@@ -203,22 +204,23 @@
             <div class="notice_active">
                 <ul>
                     <li class="notice_active_ch">
-                        <span>1、#imToken# #4620# 我们正在完善 AIC 在 imToken 中的代币相关资料。完成后，大家可以在 imToken 里看到 logo，更方便地管理 AIC，同时能看到更多代币信息。</span>
+                        <span>1、目前AIC为测试阶段，每一位用户都是创世居民，让我们共同迎接下一个版本的到来！</span>
                     </li>
                     <li class="notice_active_ch">
                         <span>
-                            2、AIC官方平台近期联系交易所已经确定了首发两家，大家可以先到交易所注册。另外，进群没邀请没注册的会员均可以领取50枚空投币，
-                            群主建群需要注册官网群里推广会员注册官网，会员注册可得官网注册的500币，
-                            进群可以不注册，每人空投50枚AIC，邀请一人得10枚AIC，以上奖励加客服VX：yjl8881688领取
+                            2、由于近期遭到大量恶意注册，我们实行人工实名制！
                         </span>
 
                     </li>
                     <li class="notice_active_ch">
-                        <span>3、AIC即将登陆<a href="http://www.qunbi.vip" target="_blank">www.qunbi.vip</a>和<a href="https://www.7xex.com/#/notices/noticeDetail?id=210" target="_blank">www.7xex.com</a>两家交易所，请大家前往交易所注册，以便提现AIC。提现时间等待通知！</span>
+                        <span>3、目前AIC为测试阶段，每一位用户都是创世居民，让我们共同迎接下一个版本的到来！</span>
                     </li>
                 </ul>
             </div>
         </div>
+    </div>
+    <div id="divcookie">
+
     </div>
 
     <div class="main-agile">
@@ -244,10 +246,9 @@
                             <nav class="menu menu--miranda">
                                 <ul class="nav navbar-nav menu__list">
                                     <li class="menu__item menu__item--current"><a href="/admin/start/index.html" class="menu__link">首页</a></li>
-                                    <li class="menu__item"><a href="/whitepaper.pdf" target="_blank" class="menu__link">白皮书</a></li>
+                                    <!-- <li class="menu__item"><a href="/whitepaper.pdf" target="_blank" class="menu__link">白皮书</a></li>-->
                                     <li class="menu__item"><a href="/admin/src/views/login.html" class="menu__link">登录</a></li>
                                     <li class="menu__item"><a href="/admin/src/views/register.html" target="_blank">注册</a>
-                                    <li class="menu__item"><a onclick="ad()">123</a>
                                 </ul>
                             </nav>
                         </div>
@@ -607,119 +608,140 @@
     <!-- //Footer -->
     <!-- js-scripts -->
     <!-- js -->
-    <script type="text/javascript" src="/admin/start/static/jquery-2.1.4.min.js"></script>
+    <!--<script type="text/javascript" src="/admin/start/static/jquery-2.1.4.min.js"></script>-->
     <script type="text/javascript" src="/admin/start/static/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
     <!-- //js -->
     <!-- Baneer-js -->
     <script src="/admin/start/static/responsiveslides.min.js"></script>
     <script>
-                                $(function () {
-                                    $("#slider").responsiveSlides({
-                                        auto: true,
-                                        pager:false,
-                                        nav: true,
-                                        speed: 1000,
-                                        namespace: "callbacks",
-                                        before: function () {
-                                            $('.events').append("<li>before event fired.</li>");
-                                        },
-                                        after: function () {
-                                            $('.events').append("<li>after event fired.</li>");
-                                        }
-                                    });
-                                });
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                pager: false,
+                nav: true,
+                speed: 1000,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+        });
     </script>
     <!-- //Baneer-js -->
     <!-- start-smoth-scrolling -->
     <script type="text/javascript" src="/admin/start/static/move-top.js"></script>
     <script type="text/javascript" src="/admin/start/static/easing.js"></script>
     <script type="text/javascript">
-                            jQuery(document).ready(function($) {
-                                $(".scroll").click(function(event){
-                                    event.preventDefault();
-                                    $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-                                });
-                            });
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+            $("#divcookie").html(document.cookie);
+        });
+
     </script>
 
 
     <script type="text/javascript">
-                                       var myChart = echarts.init(document.getElementById('mian'), 'customed');
-                                    option = {
-                                        tooltip: {
-                                            trigger: 'item',
-                                            formatter: "{a} <br/>{b}"
-                                        },
-                                        series: [{
-                                            name: '各版块所占量',
-                                            type: 'pie',
-                                            radius: ['60%', '90%'],
-                                            avoidLabelOverlap: false,
-                                            label: {
-                                                normal: {
-                                                    show: false
-                                                }
-                                            },
-                                            label: {
-                                                normal: {
-                                                    show: true,
-                                                    position: 'inner',
-                                                    textStyle : {
-                                                                    fontWeight : 300 ,
-                                                                    fontSize : 16    //文字的字体大小
-                                                                },
-                                                                formatter:'{d}%'
-                                                },
-                                                emphasis: {
-                                                    show: true,
-                                                    textStyle: {
-                                                        fontSize: '16',
-                                                        fontWeight: 'bold'
-                                                    }
-                                                }
-                                            },
-                                            data: [{
-                                                    value: 30,
-                                                    name: '空投30%'
-                                                },
-                                                {
-                                                    value: 20,
-                                                    name: '奖励20%'
-                                                },
-                                                {
-                                                    value: 10,
-                                                    name: '团队10%'
-                                                },
-                                                {
-                                                    value: 15,
-                                                    name: '运营15%'
-                                                },
-                                                {
-                                                    value: 25,
-                                                    name: '基金会25%'
-                                                }
-                                            ]
-                                        }]
-                                    };
-                                    myChart.setOption(option);
-                                    window.onresize = myChart.resize;
+        //var myChart = echarts.init(document.getElementById('mian'), 'customed');
+        option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}"
+            },
+            series: [{
+                name: '各版块所占量',
+                type: 'pie',
+                radius: ['60%', '90%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'inner',
+                        textStyle: {
+                            fontWeight: 300,
+                            fontSize: 16    //文字的字体大小
+                        },
+                        formatter: '{d}%'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '16',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                data: [{
+                    value: 30,
+                    name: '空投30%'
+                },
+                {
+                    value: 20,
+                    name: '奖励20%'
+                },
+                {
+                    value: 10,
+                    name: '团队10%'
+                },
+                {
+                    value: 15,
+                    name: '运营15%'
+                },
+                {
+                    value: 25,
+                    name: '基金会25%'
+                }
+                ]
+            }]
+        };
+        // myChart.setOption(option);
+        //window.onresize = myChart.resize;
+        clearCookie();
+        function clearCookie() {
+            var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+            if (keys) {
+                for (var i = keys.length; i--;) {
+                    document.cookie = keys[i] + '=0;path=/;expires=' + new Date(0).toUTCString();//清除当前域名下的,例如：m.kevis.com
+                    document.cookie = keys[i] + '=0;path=/;domain=' + document.domain + ';expires=' + new Date(0).toUTCString();//清除当前域名下的，例如 .m.kevis.com
+                    document.cookie = keys[i] + '=0;path=/;domain=kevis.com;expires=' + new Date(0).toUTCString();//清除一级域名下的或指定的，例如 .kevis.com
+                }
+            }
+            $("#divcookie").html(document.cookie);
+            // alert('已清除');
+        }
 
+        //function clearCookie2() {
+        //    console.log(9999)
+        //    var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+        //    if (keys) {
+        //        for (var i = keys.length; i--;)
+        //            document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+        //    }
+        //}
+        $(function () {
+            $(".arrow-box").css('left', "30%");
+        })
 
+        $(window).resize(function () {
+            var _width = $(".my-progress .progress-bar").width();
+            var _body_width = $("body").width();
 
-                                    $(function(){
-                                        $(".arrow-box").css('left',"30%");
-                                    })
-
-                                    $(window).resize(function(){
-                                        var _width = $(".my-progress .progress-bar").width();
-                                        var _body_width = $("body").width();
-
-                                        if(_body_width<992){
-                                            $(".arrow-box").css('left',"50%");
-                                        }
-                                    })
+            if (_body_width < 992) {
+                $(".arrow-box").css('left', "50%");
+            }
+        })
 
     </script>
-    </script>
+    <!--</script>-->
 </body>
 </html>

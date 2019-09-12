@@ -16,7 +16,6 @@
                     <a id="en" href="javascript:;">
                         <!--<img src="http://t.cn/RCzsdCq" class="layui-nav-img">-->
                         未登录
-
                     </a>
                     <!--<dl class="layui-nav-child">
                         <dd><a href="">首页</a></dd>
@@ -27,7 +26,7 @@
                         <dd><a href="">邀请</a></dd>
                     </dl>-->
                 </li>
-                <li class="layui-nav-item"><a href="">注销</a></li>
+                <li class="layui-nav-item"><a  href="/admin/start/index.html">注销</a></li>
             </ul>
         </div>
 
@@ -77,11 +76,8 @@
             var element = layui.element;
             $ = layui.jquery;
 
-             let em = decodeURI(document.cookie).split('=');
         let gr = document.getElementById("geren");
-        
-        var aObj = document.getElementById("en");
-        aObj.innerText = em[0];
+        let aObj = document.getElementById("en");
         function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
             var vars = query.split("&");
@@ -90,20 +86,26 @@
                 if (pair[0] == variable) { return pair[1]; }
             }
             return (false);
-        }
+            }
+          
+            function clearCookie2() {
+                var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+                if (keys) {
+                    for (var i = keys.length; i--;)
+                        document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+                }
+            } 
         $.ajax({
                 type: 'post',
                 url: '/control/indexcontrol.ashx?functiontype=all',
                 cache: false,
-                data: {
-                    email: em[0]
-                },
                 dataType: 'json',
                 success: function (data) {
                     console.log(data)
                     let yu = document.getElementById("yue");
                     yu.innerText = "AIC " + data.data[0].number.toFixed(3) + "";
                     gr.innerText = "AIC 个人中心（ID：" + data.data[0].ID + "）";
+                    aObj.innerText = data.data[0].email;
                 },
             });
         });

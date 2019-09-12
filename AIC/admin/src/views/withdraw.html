@@ -63,7 +63,7 @@
 
 
                         <div class="layui-form-item">
-                            <label class="layui-form-label">SGL数量</label>
+                            <label class="layui-form-label">AIC数量</label>
                             <div class="layui-input-block">
                                 <input type="text" name="number" autocomplete="off" placeholder="请输入转账数额" class="layui-input" style="width:100%;margin-top:20px;">
                             </div>
@@ -103,28 +103,26 @@
         var form;
         var $;
         var layer;
+        var meid = "";
         //JavaScript代码区域
         layui.use(['form', 'jquery','layer'], function () {
             form = layui.form;
             $ = layui.jquery;
             layer = layui.layer;
             let gr = document.getElementById("geren");
+            let aObj = document.getElementById("en");
              $.ajax({
                 type: 'post',
                 url: '/control/indexcontrol.ashx?functiontype=all',
                 cache: false,
-                data: {
-                    email: em[0]
-                },
                 dataType: 'json',
-                success: function (data) {
+                 success: function (data) {
+                     meid = data.data[0].ID;
                     gr.innerText = "AIC 个人中心（ID：" + data.data[0].ID + "）";
+                    aObj.innerText = data.data[0].email;
                 },
             });
         });
-        let em = decodeURI(document.cookie).split('=');
-        var aObj = document.getElementById("en");
-        aObj.innerText = em[0];
         function btnsub() {
             if (!$('input[name="ID"]').val()) {
                 alert('请输入对方ID!');
@@ -134,7 +132,7 @@
                 alert('请输入转账数额!');
                 return false;
             }
-            if ($('input[name="number"]').val() == em[1]) {
+            if ($('input[name="number"]').val() == meid) {
                 alert('请输入有效ID!');
                 return false;
             }
@@ -145,7 +143,6 @@
                 data: {
                     ID: $('input[name="ID"]').val(),
                     number: $('input[name="number"]').val(),
-                    me: em[1]
                 },
                 dataType: 'json',
                 success: function (data) {

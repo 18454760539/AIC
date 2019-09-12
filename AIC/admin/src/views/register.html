@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/admin/start/assets/css/app.css">
     <link rel="stylesheet" href="/admin/start/assets/css/slide-unlock.css">
     <script src="/admin/start/assets/js/jquery.min.js"></script>
+    <script src="../../start/layui/layui.js"></script>
 </head>
 <body data-type="login">
     <script src="/admin/start/assets/js/theme.js"></script>
@@ -108,8 +109,9 @@
         })();
     </script>
     <script>
+        layui.use('layer', function () {
+            var layer = layui.layer;
         $('#btnn').click(function () {
-            console.log($("#email").val())
             if (!$("#tj_email").val()) {
                 //layer.msg('请输入推荐人邮箱!');
                 alert("请输入推荐人邮箱!")
@@ -139,7 +141,8 @@
             //    layer.msg('阅读以上规则,并同意！');
             //    return false;
             //}
-            $("#btnn").attr("disabled", "true");
+            var layerloadindex = layer.msg('加载中', { icon: 16, time: 0, shade: 0.08 });//弹出加载中中对话框
+            //$("#btnn").attr("disabled", "true");
             $(function () {
                 var params = {
                     tj_email: $("#tj_email").val(),
@@ -148,7 +151,7 @@
                     towpassword: $("#towpassword").val(),
                 };
                 $.ajax({
-                    url:"/control/indexcontrol.ashx?functiontype=registered",
+                    url:"/control/logincontrol.ashx?functiontype=registered",
                     data: params,
                     cache: false,
                     type: "post",
@@ -166,32 +169,9 @@
                     }
                 });
             });
+            layer.close(layerloadindex);//关闭加载中提示
         })
-        //$(function () {
-        //    var slider = new SliderUnlock("#slider", {
-        //        successLabelTip: "验证成功"
-        //    }, function () {
-        //        $.ajax({
-        //            type: 'post',
-        //            url: '/control/indexcontrol.ashx?functiontype=fsyzm',
-        //            data: { email: $("#email").val(), tj_email: $("#tj_email").val() },
-        //            cache: false,
-        //            dataType: 'json',
-        //            success: function (data) {
-        //                if (data.code == '200') {
-        //                    $('#labelTip').attr('data', data.data);
-        //                    layer.msg('发送邮件验证码成功！');
-        //                } else {
-        //                    layer.msg(data.data, function () {
-        //                        location.reload();
-        //                    });
-        //                }
-        //            },
-        //        });
-        //    });
-        //    slider.init();
-        //})
-
+        }); 
 
 
 

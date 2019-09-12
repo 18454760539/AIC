@@ -92,21 +92,19 @@
             table = layui.table;
             $ = layui.jquery;
             let gr = document.getElementById("geren");
+            let aObj = document.getElementById("en");
               $.ajax({
                 type: 'post',
                 url: '/control/indexcontrol.ashx?functiontype=all',
                 cache: false,
-                data: {
-                    email: em[0]
-                },
                 dataType: 'json',
                 success: function (data) {
                     gr.innerText = "AIC 个人中心（ID：" + data.data[0].ID + "）";
+                    aObj.innerText = data.data[0].email;
                 },
               });
              
-        var aObj = document.getElementById("en");
-        aObj.innerText = em[0];
+
             tablema();
         });
        
@@ -116,9 +114,6 @@
                 elem: '#mygrouptable'
                 , id: 'mygrouptable'
                 , url: '/control/indexcontrol.ashx?functiontype=td'
-                , where:{
-                    tj_email:em[0]
-                }
                 // , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
                 , cols: [[
                     { type: 'numbers', event: "edit", align: 'center', title: '序号' }

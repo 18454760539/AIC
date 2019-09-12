@@ -7,9 +7,9 @@ namespace Models
     ///<summary>
     ///用户表
     ///</summary>
-    public partial class user
+    public partial class userstable
     {
-        public user()
+        public userstable()
         {
 
         }
@@ -68,5 +68,12 @@ namespace Models
         /// Nullable:True
         /// </summary>    
         public int? type { get; set; }
+
+        /// <summary>
+        /// Desc:转账状态（0：正常，1：不能转账）
+        /// Default:0
+        /// Nullable:True
+        /// </summary>    
+        public int? zztype { get; set; }
     }
 }

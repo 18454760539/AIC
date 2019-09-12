@@ -39,13 +39,6 @@ layui.define('form', function(exports){
       ,'密码必须6到12位，且不能出现空格'
     ] 
   });
-
-  
-  //更换图形验证码
-  $body.on('click', '#LAY-user-get-vercode', function(){
-    var othis = $(this);
-    this.src = 'https://www.oschina.net/action/user/captcha?t='+ new Date().getTime()
-  });
   
   //对外暴露的接口
   exports('user', {});

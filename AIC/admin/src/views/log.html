@@ -91,23 +91,20 @@
             $ = layui.jquery;
             table = layui.table;
             let gr = document.getElementById("geren");
+            let aObj = document.getElementById("en");
             $.ajax({
                 type: 'post',
                 url: '/control/indexcontrol.ashx?functiontype=all',
                 cache: false,
-                data: {
-                    email: em[0]
-                },
                 dataType: 'json',
                 success: function (data) {
                     gr.innerText = "AIC 个人中心（ID：" + data.data[0].ID + "）";
+                    aObj.innerText = data.data[0].email;
                 },
             });
             logtablema();
         });
-        let em = decodeURI(document.cookie).split('=');
-        var aObj = document.getElementById("en");
-        aObj.innerText = em[0];
+
         function logtablema() {
 
             table.render({

@@ -111,14 +111,28 @@
     <script>
         layui.use('layer', function () {
             var layer = layui.layer;
+            var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+
         $('#btnn').click(function () {
             if (!$("#tj_email").val()) {
                 //layer.msg('请输入推荐人邮箱!');
                 alert("请输入推荐人邮箱!")
                 return false;
             }
+            if (!myreg.test($("#tj_email").val()))//对输入的值进行判断
+            {
+                alert('请输入有效的E_mail！');
+                myreg.focus();
+                return false;
+            }
             if (!$("#email").val()) {
                 alert('请输入您的邮箱!');
+                return false;
+            }
+            if (!myreg.test($("#email").val()))//对输入的值进行判断
+            {
+                alert('请输入有效的E_mail！');
+                myreg.focus();
                 return false;
             }
             //if (!$("#vcode").val()) {

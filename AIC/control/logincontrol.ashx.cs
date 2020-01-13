@@ -41,6 +41,7 @@ namespace AIC.control
             if (get.Count > 0)
             {
                 context.Response.Write(new responsejson(1, "当前邮箱已注册"));
+                return;
             }
             var lisget = db.Queryable<userstable>().Where(it => it.email == tj_email).ToList();
 
